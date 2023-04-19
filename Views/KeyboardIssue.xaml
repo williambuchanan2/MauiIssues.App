@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiIssues.Views.KeyboardIssue"
+             Title="KeyboardIssue">
+    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0" Padding="0">
+
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label 
+            Text="Page 9"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+            <Button Text="Next" Command="{Binding NextButtonPressedCommand}" />
+            <Label  Text="Page 8" VerticalOptions="Center"  HorizontalOptions="Center" />
+            <Button Text="Next" Command="{Binding NextButtonPressedCommand}" />
+
+            <!--User icon-->
+            <StackLayout WidthRequest="60">
+                <Frame HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,10,0,0" HorizontalOptions="Center">
+                    <Image Source="login_icon_transbg.png" Aspect="AspectFit" />
+                </Frame>
+            </StackLayout>
+
+            <Grid RowSpacing="5"  Margin="20,10,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Text="Welcome!" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0"/>
+                <Label Grid.Row="2" Text="Create your account!" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" HorizontalOptions="Center" FontSize="Subtitle" FontAttributes="Bold" Padding="0"/>
+
+            </Grid>
+
+
+            <Entry Text="{Binding FirstName}" Placeholder="Firstname"  WidthRequest="350"/>
+            <Entry Text="{Binding LastName}" Placeholder="Last Name" WidthRequest="350"/>
+            <Entry Text="{Binding UserNameEmail}" Placeholder="Email"  WidthRequest="350"/>
+            <Entry Text="{Binding Mobile}" Placeholder="Mobile"  WidthRequest="350"/>
+            <Entry Text="{Binding Postcode}" Placeholder="Postcode"  WidthRequest="350"/>
+            <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding PasswordVerify}" Placeholder="Verify Password" IsPassword="True"  WidthRequest="350"/>
+            <Entry Text="{Binding xyz}" Placeholder="Reach me" WidthRequest="350"/>
+
+            <!-- Buttons -->
+
+            <!-- Sign up link-->
+
+            <Button  Style="{DynamicResource featureButton}" VerticalOptions="End" Margin="0, 20, 0,0" HeightRequest="50"
+                                Text="Create Account"  Command="{Binding CreateAccountPressedCommand}" 
+                              AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+
+            <!-- Nav to Login -->
+
+            <HorizontalStackLayout  Margin="0,10,0,0" Padding="0" HorizontalOptions="CenterAndExpand">
+                <Label Text="Already have an account?" Style="{StaticResource Key=linkLabel}" Margin="3" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                <Button  Style="{StaticResource Key=linkButton}"  Text="Sign in" Command="{Binding LoginButtonPressedCommand}"
+                                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

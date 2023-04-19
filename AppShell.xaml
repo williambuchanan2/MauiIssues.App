@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiIssues.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiIssues"
+      xmlns:views="clr-namespace:MauiIssues.Views"
+  Shell.FlyoutBehavior="Disabled">
+
+
+    <!-- Initial load goes to LoadingPage, which then determines route to take -->
+    <ShellItem FlyoutItemIsVisible="False" x:Name="MainPageShellItem" Title="Main Page">
+        <ShellContent ContentTemplate="{DataTemplate views:MainPage}" Route="MainPage" />
+    </ShellItem>
+
+
+    <!--<MenuFlyoutItem Text="PRODUCTS" Shell.MenuItemTemplate="{StaticResource headerMenuItemTemplate}" />-->
+
+    <!--<FlyoutItem Title="Home"  x:Name="MainShellItem">
+
+        <ShellContent Title="Home" Icon="home.png" ContentTemplate="{DataTemplate views:TabA}" Route="TabA"/>
+        <ShellContent Title="Notifications" Icon="alert.png" ContentTemplate="{DataTemplate views:TabB}" Route="TabB" />
+        <ShellContent Title="Set Mood" Icon="set_mood2.png" ContentTemplate="{DataTemplate views:TabC}" Route="TabC" />
+
+        --><!--Split tab for message page--><!--
+        <Tab Title="Chat" Icon="msg.png">
+            <ShellContent Title="Messages" ContentTemplate="{DataTemplate views:TabD}" Route="TabD" />
+            <ShellContent Title="Message Board" ContentTemplate="{DataTemplate views:TabE}" Route="TabE" />
+        </Tab>
+
+        --><!--Split tab for friends page--><!--
+        <Tab Title="NavIssue">
+            <ShellContent Title="Tab F" ContentTemplate="{DataTemplate views:TabF}" Route="TabF"/>
+            <ShellContent Title="Tab G" ContentTemplate="{DataTemplate views:TabG}" Route="TabG"/>
+            <ShellContent Title="Tab H" ContentTemplate="{DataTemplate views:TabH}" Route="TabH"/>
+        </Tab>
+    </FlyoutItem>-->
+
+
+    <!--Profile options tab bar-->
+    <!--<FlyoutItem Title="Settings" FlyoutIcon="setting.png" x:Name="SettShellItem">
+        <Tab Title="Settings" Icon="user.png">
+            <ShellContent Title="Profile Options" ContentTemplate="{DataTemplate views:SettA}" Route="SettA"/>
+            <ShellContent Title="App Settings" ContentTemplate="{DataTemplate views:SettB}" Route="SettB"/>
+
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Reset" FlyoutIcon="reset.png" x:Name="ResetShellItem">
+        <ShellContent ContentTemplate="{DataTemplate views:NewPage1}" Route="NewPage1"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Logout" x:Name="TabHShellItem" >
+        <ShellContent ContentTemplate="{DataTemplate views:TabH}" Route="TabH" />
+    </FlyoutItem>-->
+
+
+</Shell>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiIssues.Views.CarouselIssue"
+             xmlns:local="clr-namespace:MauiIssues"
+             x:Name="thisSetMoodView"
+             Title="Carousel or Resource Issue">
+
+    <Grid Margin="20,35,20,20" BindingContext="{x:Reference thisSetMoodView}" x:Name="MainBorder">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <VerticalStackLayout  VerticalOptions="FillAndExpand" Grid.Row="1">
+
+            <Grid RowSpacing="0" x:Name="MainContainer" HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <CarouselView IndicatorView="indMood" Margin="0,0,0,0" HeightRequest="300" IsBounceEnabled="True" ItemsSource="{Binding MoodList}" Loop="True"
+                              CurrentItem="{Binding SelectedMood}" Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                              x:Name="Carousel" >
+
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate x:DataType="local:MoodInformation">
+                            <Grid HorizontalOptions="FillAndExpand" RowDefinitions="*,100">
+                                <Image Source="{Binding UserImage}" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0"
+                                       HeightRequest="200"/>
+                                <Label Text="{Binding MoodDescription}" FontSize="Subtitle" Grid.Row="1"
+                                       FontAttributes="Bold" Margin="0,50,0,0"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <ImageButton Source="carousel_back.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Padding="0"
+                         Margin="0,-90,0,0"  Clicked="Prepage" />
+
+                <ImageButton Source="carousel_fwd.png" Grid.Row="0" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Margin="0,-90,0,0"
+                             Padding="0"  Clicked="Nextpage"  />
+
+
+            </Grid>
+
+            <IndicatorView  Margin="0,30" VerticalOptions="Center" x:Name="indMood" IndicatorSize="10" IndicatorColor="Grey"
+                       SelectedIndicatorColor="LawnGreen" HorizontalOptions="Center" FlowDirection="MatchParent" />
+
+            <Picker x:Name="pickMoodTheme" Title="Select theme" SelectedItem="{Binding MoodTheme, Mode=TwoWay}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>circles</x:String>
+                        <x:String>thomas</x:String>
+                        <x:String>standard</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+</ContentPage>
